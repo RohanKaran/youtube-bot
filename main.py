@@ -7,5 +7,6 @@ with YouTube(teardown=True) as bot:
     bot.land_first_page()
     rand = bot.find_elements(By.ID, "details")
     for i in range(len(rand)):
-        write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
+        if rand[i].find_element(By.ID, "video-title").text:
+            write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
               rand[i].find_element(By.ID, "channel-name").text]])

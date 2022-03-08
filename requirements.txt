@@ -1,0 +1,2 @@
+selenium~=4.1.2
+google-api-python-client~=2.39.0

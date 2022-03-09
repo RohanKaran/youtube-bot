@@ -6,11 +6,9 @@ from google_client.gspwrite import write
 with YouTube(teardown=True) as bot:
     bot.land_first_page()
     rand = bot.find_elements(By.ID, "details")
-    n = 10
-    for i in range(n):
-        try:
-            print(rand[i].find_element(By.ID, "video-title"))
+    i = 0
+    while i < 10:
+        if rand[i].find_element(By.ID, "video-title").strip() != "":
             write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
                     rand[i].find_element(By.ID, "channel-name").text]])
-        except:
-            print('error')
+            i += 1

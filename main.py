@@ -8,7 +8,8 @@ with YouTube(teardown=True) as bot:
     rand = bot.find_elements(By.ID, "details")
     n = 10
     while n > 0:
-        if rand[i].find_element(By.ID, "video-title"):
-            write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
-                    rand[i].find_element(By.ID, "channel-name").text]])
+        print( rand[i].find_element(By.ID, "video-title").text,
+                rand[i].find_element(By.ID, "channel-name").text)
+        write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
+                rand[i].find_element(By.ID, "channel-name").text]])
         n -= 1

@@ -9,7 +9,7 @@ with YouTube(teardown=True) as bot:
     n = 10
     for i in range(n):
         try:
-            print(rand[i].find_element(By.ID, "video-title").text)
+            print(rand[i].find_element(By.ID, "video-title"))
             write([[str(datetime.datetime.now()), rand[i].find_element(By.ID, "video-title").text,
                     rand[i].find_element(By.ID, "channel-name").text]])
         except:
